@@ -46,10 +46,6 @@ class Game(pyglet.window.Window):
     # color of the shape. shapes have been classified using colours.
     # color is used to assign the image given to the shape
     color = None
-    # sound player
-    player = pyglet.media.Player
-    moving_effect = pyglet.media.load('src/assets/movement.wav', streaming=False)
-    scoring_effect = pyglet.media.load('src/assets/point.wav', streaming=False)
     one_block = 40          # 40 pixels
 
     def __init__(self):
@@ -216,7 +212,6 @@ class Game(pyglet.window.Window):
         for n in range(len(self.base)):
             if self.base[n].y > row * self.one_block:
                 self.base[n].y -= self.one_block
-        self.scoring_effect.play()
 
     def points_scored(self):
         counter = 0
@@ -281,7 +276,6 @@ class Game(pyglet.window.Window):
 
     def change_piece(self):
 
-        self.moving_effect.play()
         # self.color gives the color of the blocks to be added to the base
         for i in range(4):
             self.board[self.piece[i].y // self.one_block][self.piece[i].x // self.one_block] = 1
