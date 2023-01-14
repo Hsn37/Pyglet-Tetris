@@ -1,6 +1,8 @@
 # Pyglet-Tetris
 The classic game tetris, developed using the library pyglet.
 
+![Tetris](img.png)
+
 Controls:
 
 'UP' arrow key = Rotate shape
